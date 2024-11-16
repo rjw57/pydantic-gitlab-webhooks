@@ -38,23 +38,29 @@ jobs:
         with:
           name: python-dist
           path: dist/*
-  test-pypi-publish:
+  test-pypi:
     name: Publish to Test PyPI
-    uses: ./.github/workflows/pypi.yml
     needs: [release]
+    runs-on: ubuntu-24.04
     permissions:
       id-token: write
-    with:
-      environment-name: test-pypi
-      environment-url: https://test.pypi.org/p/pydantic-gitlab-webhooks
-      repository-url: https://test.pypi.org/legacy/
-  pypi-publish:
+    environment:
+      name: test-pypi
+      url: https://test.pypi.org/p/pydantic-gitlab-webhooks
+    steps:
+      - name: Upload
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+  pypi:
     name: Publish to PyPI
-    needs: [test-pypi-publish]
+    needs: [test-pypi]
+    runs-on: ubuntu-24.04
     permissions:
       id-token: write
-    uses: ./.github/workflows/pypi.yml
-    with:
-      environment-name: pypi
-      environment-url: https://pypi.org/p/pydantic-gitlab-webhooks
-      repository-url: https://pypi.org/legacy/
+    environment:
+      name: pypi
+      url: https://pypi.org/p/pydantic-gitlab-webhooks
+    steps:
+      - name: Upload
+        uses: pypa/gh-action-pypi-publish@release/v1
