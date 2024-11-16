@@ -1,39 +1,16 @@
+name: Main
+
 on:
   push:
 
 jobs:
   test:
     name: Run tests
-    uses: ./.github/workflows/tests-template.yml
+    uses: ./.github/workflows/tests.yml
   release:
-    name: Create release
-    if: ${{ github.ref == 'refs/heads/main' }}
-    runs-on: ubuntu-24.04
+    name: Release
+    uses: ./.github/workflows/release.yml
+    if: github.ref == 'refs/heads/main'
     permissions:
-      # Required to allow release-it to create releases
       contents: write
-    needs: [test]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v3
-      - name: Configure git
-        run: |
-          git config user.name "${GITHUB_ACTOR}"
-          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-      - name: Create release
-        run: npx -p @release-it/bumper -p @release-it/conventional-changelog release-it
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Upload artifacts for publication
-        uses: actions/upload-artifact@v4
-        with:
-          name: python-dist
-          path: dist/*
+      id-token: write
