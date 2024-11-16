@@ -12,13 +12,16 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          persist-credentials: false
       - name: Set up Python
         uses: actions/setup-python@v5
       - name: Install poetry
         uses: abatilo/actions-poetry@v3
       - name: Build distribution artifacts
         run: poetry build
+      - name: Configure git
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - name: Create release
         run: npx -p @release-it/bumper -p @release-it/conventional-changelog release-it
         env:
