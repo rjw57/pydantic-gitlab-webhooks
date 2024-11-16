@@ -6,6 +6,7 @@ from . import (
     _access_token_event,
     _issue_event,
     _job_event,
+    _merge_request_event,
     _pipeline_event,
     _release_event,
 )
@@ -131,16 +132,15 @@ AnyNoteEvent = Union[CommitNoteEvent, IssueNoteEvent, MergeRequestNoteEvent, Sni
 
 class MergeRequestEvent(BaseModel):
     # TODO: work out where this is defined in the GitLab source code.
-    #
-    # TODO: changes
     object_kind: Literal["merge_request"]
     event_type: Literal["merge_request"]
     user: User
     project: Project
-    object_attributes: MergeRequest
+    object_attributes: _merge_request_event.MergeRequest
     labels: list[Label]
     assignees: list[User]
     reviewers: list[User]
+    changes: Optional[_merge_request_event.Changes] = None
 
 
 class WikiPageEvent(BaseModel):

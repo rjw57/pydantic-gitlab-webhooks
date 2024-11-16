@@ -147,7 +147,6 @@ class MergeRequest(BaseModel, _TimestampedMixin, _IdentifiableMixin):
     source: Optional[Project]
     target: Optional[Project]
     last_commit: Commit
-    work_in_progress: bool
     draft: bool
     assignee: Optional[User] = None
     detailed_merge_status: str
