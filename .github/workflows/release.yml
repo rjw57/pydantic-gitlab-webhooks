@@ -1,0 +1,25 @@
+on:
+  workflow_dispatch:
+
+name: Release
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v5
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v3
+      - name: Build distribution artifacts
+        run: poetry build
+      - name: Create release
+        run: npx -p @release-it/bumper -p @release-it/conventional-changelog release-it --dry-run
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

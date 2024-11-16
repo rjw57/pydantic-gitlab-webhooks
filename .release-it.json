@@ -4,7 +4,8 @@
   },
   "github": {
     "release": true,
-    "autoGenerate": true
+    "autoGenerate": true,
+    "assets": "dist/*"
   },
   "plugins": {
     "@release-it/conventional-changelog": {

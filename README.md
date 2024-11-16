@@ -82,8 +82,6 @@ The available event models are:
 
 ## Making a release
 
-From `main`:
-
-```sh
-npx -p @release-it/conventional-changelog -p @release-it/bumper release-it
-```
+[Manually
+trigger](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/manually-running-a-workflow)
+the release workflow.
