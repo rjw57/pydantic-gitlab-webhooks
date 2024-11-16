@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.14](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.13...0.1.14) (2024-11-16)
+
+### Bug Fixes
+
+* **docs:** fix URL for test suite brag badge ([893207b](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/893207b3f29b02c3c9c81b2f2122b6c814b96cb0))
+
 ## [0.1.13](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.12...0.1.13) (2024-11-16)
 
 ## [0.1.12](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.11...0.1.12) (2024-11-16)
