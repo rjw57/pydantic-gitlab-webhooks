@@ -1,11 +1,11 @@
-name: Test suite
+name: tests
 
 on:
   - push
 
 jobs:
   pre-commit:
-    name: Run pre-commit checks
+    name: pre-commit
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -14,12 +14,18 @@ jobs:
         with:
           python-version: "3.12"
       - uses: ./.github/actions/pre-commit
-  python-tests:
-    runs-on: ubuntu-latest
+  commitlint:
+    name: commitlint
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: wagoid/commitlint-github-action@v6
+  pytest:
+    name: pytest
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.11", "3.12"]
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}
