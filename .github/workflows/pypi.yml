@@ -26,7 +26,8 @@ jobs:
       - name: Download assets
         uses: robinraju/release-downloader@v1
         with:
-          tag: "${{ github.tag }}"
+          tag: "${{ github.ref_name }}"
+          fileName: "*"
           out-file-path: dist/
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
