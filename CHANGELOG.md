@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.3](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.2...0.1.3) (2024-11-16)
+
+### Bug Fixes
+
+* **ci:** grant appropriate permissions for release-it ([291d775](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/291d7758bee21388149f7998a21a236924d2643b))
+* **ci:** set git user name and email when making releases ([83f06cc](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/83f06cc2d24e9c7aefec8fe0c0a93447eb93d488))
+* remove "--dry-run" flag from release automation ([995c232](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/995c2323431f4b244ec3372956c345a497406433))
+
 ## [0.1.2](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.1...0.1.2) (2024-11-16)
 
 ## [0.1.1](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.0...0.1.1) (2024-11-16)
