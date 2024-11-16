@@ -49,4 +49,33 @@ else:
 # more efficient.
 parsed_event = validate_event_dict(event_body)
 assert parsed_event.group.full_path == "twitter"
+
+# Individual event models are available from the `pydantic_gitlab_webhooks.events` module. For
+# example:
+from pydantic_gitlab_webhooks.events import GroupAccessTokenEvent
+
+parsed_event = GroupAccessTokenEvent.model_validate(event_body)
 ```
+
+The available event models are:
+
+- `CommitNoteEvent`
+- `DeploymentEvent`
+- `EmojiEvent`
+- `FeatureFlagEvent`
+- `GroupAccessTokenEvent`
+- `GroupMemberEvent`
+- `IssueEvent`
+- `IssueNoteEvent`
+- `JobEvent`
+- `MergeRequestEvent`
+- `MergeRequestNoteEvent`
+- `PipelineEvent`
+- `ProjectAccessTokenEvent`
+- `ProjectEvent`
+- `PushEvent`
+- `ReleaseEvent`
+- `SnippetNoteEvent`
+- `SubgroupEvent`
+- `TagPushEvent`
+- `WikiPageEvent`
