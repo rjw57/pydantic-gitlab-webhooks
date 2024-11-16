@@ -1,5 +1,10 @@
 # Pydantic models for GitLab Webhooks
 
+[![PyPI - Version](https://img.shields.io/pypi/v/pydantic-gitlab-webhooks)](https://pypi.org/p/pydantic-gitlab-webhooks/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pydantic-gitlab-webhooks)
+[![GitHub Release](https://img.shields.io/github/v/release/rjw57/pydantic-gitlab-webhooks)](https://github.com/rjw57/pydantic-gitlab-webhooks/releases)
+[![Test suite status](https://github.com/rjw57/pydantic-gitlab-webhooks/actions/workflows/test.yml/badge.svg)](https://github.com/rjw57/pydantic-gitlab-webhooks/actions/workflows/test.yml?query=branch%3Amain)
+
 Module containing Pydantic models for validating bodies from [GitLab webhook
 requests](https://docs.gitlab.com/ee/user/project/integrations/webhook_events.html).
 
