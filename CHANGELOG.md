@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.4](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.3...0.1.4) (2024-11-16)
+
+### Bug Fixes
+
+* **ci:** generate Python artefacts after version bump ([87025d3](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/87025d3860f5cbc5d0f0656aa86e4807eb3e86b8))
+
 ## [0.1.3](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.2...0.1.3) (2024-11-16)
 
 ### Bug Fixes
