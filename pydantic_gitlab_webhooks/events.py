@@ -2,7 +2,13 @@ from typing import Annotated, Literal, Optional, Union
 
 from pydantic import AnyHttpUrl, BaseModel, Field, TypeAdapter
 
-from . import _access_token_event, _job_event, _pipeline_event, _release_event
+from . import (
+    _access_token_event,
+    _issue_event,
+    _job_event,
+    _pipeline_event,
+    _release_event,
+)
 from ._common import (
     AccessToken,
     Commit,
@@ -79,21 +85,17 @@ class TagPushEvent(_BasePushEvent):
     event_name: Literal["tag_push"]
 
 
-class _IssueEventIssue(Issue):
-    action: Literal["open"] | Literal["close"] | Literal["reopen"] | Literal["update"]
-
-
 class IssueEvent(BaseModel):
     # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/hook_data/issue_builder.rb
-    # TODO: changes
     object_kind: Literal["issue"] | Literal["work_item"]
     event_type: Literal["issue"]
     user: User
     project: Project
-    object_attributes: _IssueEventIssue
+    object_attributes: _issue_event.Issue
     assignees: list[User]
     assignee: Optional[User] = None
     labels: list[Label]
+    changes: Optional[_issue_event.Changes] = None
 
 
 class _BaseNoteEvent(BaseModel):
