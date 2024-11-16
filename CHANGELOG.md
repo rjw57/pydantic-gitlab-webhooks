@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.7](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.6...0.1.7) (2024-11-16)
+
+### Bug Fixes
+
+* **docs:** ensure branch is specified in test suite brag badge ([802ff21](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/802ff216973790e52582a8af7624e68886951f9b))
+
 ## [0.1.6](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.5...0.1.6) (2024-11-16)
 
 ### Bug Fixes
