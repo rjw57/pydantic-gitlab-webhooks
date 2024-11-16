@@ -79,3 +79,11 @@ The available event models are:
 - `SubgroupEvent`
 - `TagPushEvent`
 - `WikiPageEvent`
+
+## Making a release
+
+From `main`:
+
+```sh
+npx -p @release-it/conventional-changelog -p @release-it/bumper release-it
+```
