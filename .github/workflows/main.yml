@@ -5,12 +5,56 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  tests:
     name: Run tests
     uses: ./.github/workflows/tests.yml
   release:
-    name: Release
-    uses: ./.github/workflows/release.yml
+    name: Publish release
+    needs: [tests]
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v3
+      - name: Configure git
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+      - name: Create release
+        run: npx -p @release-it/bumper -p @release-it/conventional-changelog release-it
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload artifacts for publication
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-dist
+          path: dist/*
+  test-pypi-publish:
+    name: Publish to Test PyPI
+    uses: ./.github/workflows/pypi.yml
+    needs: [release]
+    permissions:
       id-token: write
+    with:
+      environment-name: test-pypi
+      environment-url: https://test.pypi.org/p/pydantic-gitlab-webhooks
+      repository-url: https://test.pypi.org/legacy/
+  pypi-publish:
+    name: Publish to PyPI
+    needs: [test-pypi-publish]
+    permissions:
+      id-token: write
+    uses: ./.github/workflows/pypi.yml
+    with:
+      environment-name: pypi
+      environment-url: https://pypi.org/p/pydantic-gitlab-webhooks
+      repository-url: https://pypi.org/legacy/
