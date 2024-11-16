@@ -8,6 +8,12 @@ authors = [
 license = "MIT"
 readme = "README.md"
 
+[tool.poetry.urls]
+homepage = "https://github.com/rjw57/pydantic-gitlab-webhooks"
+repository = "https://github.com/rjw57/pydantic-gitlab-webhooks.git"
+issues = "https://github.com/rjw57/pydantic-gitlab-webhooks/issues"
+changelog = "https://github.com/rjw57/pydantic-gitlab-webhooks/blob/main/CHANGELOG.md"
+
   [tool.poetry.dependencies]
   python = "^3.10"
   python-dateutil = "^2.9.0.post0"
@@ -35,12 +41,6 @@ omit = [ "*/test/*", "*/tests/*" ]
 
 [tool.isort]
 profile = "black"
-
-[project.urls]
-homepage = "https://github.com/rjw57/pydantic-gitlab-webhooks"
-repository = "https://github.com/rjw57/pydantic-gitlab-webhooks.git"
-issues = "https://github.com/rjw57/pydantic-gitlab-webhooks/issues"
-changelog = "https://github.com/rjw57/pydantic-gitlab-webhooks/blob/main/CHANGELOG.md"
 
 [build-system]
 requires = [ "poetry-core" ]
