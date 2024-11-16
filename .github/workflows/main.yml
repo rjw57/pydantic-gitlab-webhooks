@@ -1,16 +1,14 @@
-name: Default branch
-
 on:
   push:
-    branches: [main]
 
 jobs:
   test:
-    name: Tests
-    uses: ./.github/workflows/test.yml
+    name: Run tests
+    uses: ./.github/workflows/tests-template.yml
   release:
-    name: Release
-    runs-on: ubuntu-latest
+    name: Create release
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-24.04
     permissions:
       # Required to allow release-it to create releases
       contents: write
