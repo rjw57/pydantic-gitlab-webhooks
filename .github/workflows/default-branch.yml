@@ -6,6 +6,7 @@ on:
 
 jobs:
   test:
+    name: Tests
     uses: ./.github/workflows/test.yml
   release:
     name: Release
