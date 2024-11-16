@@ -20,6 +20,6 @@ jobs:
       - name: Build distribution artifacts
         run: poetry build
       - name: Create release
-        run: npx -p @release-it/bumper -p @release-it/conventional-changelog release-it --dry-run
+        run: npx -p @release-it/bumper -p @release-it/conventional-changelog release-it
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
