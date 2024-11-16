@@ -84,9 +84,3 @@ The available event models are:
 - `SubgroupEvent`
 - `TagPushEvent`
 - `WikiPageEvent`
-
-## Making a release
-
-[Manually
-trigger](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/manually-running-a-workflow)
-the release workflow.
