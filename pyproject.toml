@@ -2,23 +2,24 @@
 name = "pydantic-gitlab-webhooks"
 version = "0.1.0"
 description = "Pydantic models for GitLab webhook payloads"
-authors = ["Rich Wareham <rich.pydantic-gitlab-webhooks@richwareham.com>"]
+authors = [
+  "Rich Wareham <rich.pydantic-gitlab-webhooks@richwareham.com>"
+]
 license = "MIT"
 readme = "README.md"
 
-[tool.poetry.dependencies]
-python = "^3.10"
-pydantic = {extras = ["email"], version = "^2.9.2"}
-python-dateutil = "^2.9.0.post0"
+  [tool.poetry.dependencies]
+  python = "^3.10"
+  python-dateutil = "^2.9.0.post0"
+
+    [tool.poetry.dependencies.pydantic]
+    extras = [ "email" ]
+    version = "^2.9.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"
 pytest-cov = "^6.0.0"
 faker = "^33.0.0"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
 addopts = "--cov --cov-report term --cov-report html"
@@ -30,10 +31,11 @@ ignore_missing_imports = true
 line-length = 99
 
 [tool.coverage.run]
-omit= [
-  "*/test/*",
-  "*/tests/*",
-]
+omit = [ "*/test/*", "*/tests/*" ]
 
 [tool.isort]
 profile = "black"
+
+[build-system]
+requires = [ "poetry-core" ]
+build-backend = "poetry.core.masonry.api"
