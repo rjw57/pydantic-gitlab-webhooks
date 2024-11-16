@@ -4,20 +4,39 @@ on:
 name: Release
 
 jobs:
-  release:
-    name: Release
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v5
       - name: Install poetry
         uses: abatilo/actions-poetry@v3
       - name: Build distribution artifacts
         run: poetry build
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-dist
+          path: dist/*
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      # Required to allow release-it to create releases
+      contents: write
+    needs: [build]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download distribution artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: python-dist
+          path: dist/
       - name: Configure git
         run: |
           git config user.name "${GITHUB_ACTOR}"
