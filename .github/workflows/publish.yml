@@ -1,0 +1,59 @@
+on:
+  release:
+    types: [published]
+
+name: Publish
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v3
+      - name: Build distribution artifacts
+        run: poetry build
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-dist
+          path: dist/*
+  test-pypi-publish:
+    name: Upload to Test PyPI
+    runs-on: ubuntu-latest
+    needs: [build]
+    environment:
+      name: test-pypi
+      url: https://test.pypi.org/p/pydantic-gitlab-webhooks
+    permissions:
+      id-token: write
+    steps:
+      - name: Download a single artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: python-dist
+          path: dist/
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+  pypi-publish:
+    name: Upload to PyPI
+    runs-on: ubuntu-latest
+    needs: [build, test-pypi-publish]
+    environment:
+      name: pypi
+      url: https://pypi.org/p/pydantic-gitlab-webhooks
+    permissions:
+      id-token: write
+    steps:
+      - name: Download a single artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: python-dist
+          path: dist/
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
