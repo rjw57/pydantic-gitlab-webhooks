@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.15](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.14...0.1.15) (2024-11-16)
+
+### Bug Fixes
+
+* **docs:** remove reference to manual release process ([437ec33](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/437ec334df823e47536e300a2aea30726a0e005c))
+
 ## [0.1.14](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.13...0.1.14) (2024-11-16)
 
 ### Bug Fixes
