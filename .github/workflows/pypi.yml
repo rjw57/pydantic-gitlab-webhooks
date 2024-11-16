@@ -1,0 +1,22 @@
+name: Publish Release to PyPI
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  test-pypi-publish:
+    name: Publish to Test PyPI
+    uses: ./.github/workflows/pypi-template.yml
+    with:
+      environment-name: test-pypi
+      environment-url: https://test.pypi.org/p/pydantic-gitlab-webhooks
+      repository-url: https://test.pypi.org/legacy/
+  pypi-publish:
+    name: Publish to PyPI
+    needs: [test-pypi-publish]
+    uses: ./.github/workflows/pypi-template.yml
+    with:
+      environment-name: pypi
+      environment-url: https://pypi.org/p/pydantic-gitlab-webhooks
+      repository-url: https://pypi.org/legacy/
