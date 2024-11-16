@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.6](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.5...0.1.6) (2024-11-16)
+
+### Bug Fixes
+
+* **docs:** add appropriate links to package metadata ([75b827e](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/75b827e3f47cdaada993e1b4ea9c2a48c8a726f7))
+* **docs:** add various brag badges ([9697969](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/9697969bf2bd2a5403b3b9347cb6ac6b963b7b03))
+
 ## [0.1.5](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.4...0.1.5) (2024-11-16)
 
 ## [0.1.4](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.3...0.1.4) (2024-11-16)

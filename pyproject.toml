@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pydantic-gitlab-webhooks"
-version = "0.1.5"
+version = "0.1.6"
 description = "Pydantic models for GitLab webhook payloads"
 authors = [
   "Rich Wareham <rich.pydantic-gitlab-webhooks@richwareham.com>"
@@ -8,11 +8,11 @@ authors = [
 license = "MIT"
 readme = "README.md"
 
-[tool.poetry.urls]
-homepage = "https://github.com/rjw57/pydantic-gitlab-webhooks"
-repository = "https://github.com/rjw57/pydantic-gitlab-webhooks.git"
-issues = "https://github.com/rjw57/pydantic-gitlab-webhooks/issues"
-changelog = "https://github.com/rjw57/pydantic-gitlab-webhooks/blob/main/CHANGELOG.md"
+  [tool.poetry.urls]
+  homepage = "https://github.com/rjw57/pydantic-gitlab-webhooks"
+  repository = "https://github.com/rjw57/pydantic-gitlab-webhooks.git"
+  issues = "https://github.com/rjw57/pydantic-gitlab-webhooks/issues"
+  changelog = "https://github.com/rjw57/pydantic-gitlab-webhooks/blob/main/CHANGELOG.md"
 
   [tool.poetry.dependencies]
   python = "^3.10"
