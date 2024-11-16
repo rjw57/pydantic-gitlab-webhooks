@@ -79,14 +79,18 @@ class TagPushEvent(_BasePushEvent):
     event_name: Literal["tag_push"]
 
 
+class _IssueEventIssue(Issue):
+    action: Literal["open"] | Literal["close"] | Literal["reopen"] | Literal["update"]
+
+
 class IssueEvent(BaseModel):
     # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/hook_data/issue_builder.rb
     # TODO: changes
-    object_kind: Literal["issue"]
+    object_kind: Literal["issue"] | Literal["work_item"]
     event_type: Literal["issue"]
     user: User
     project: Project
-    object_attributes: Issue
+    object_attributes: _IssueEventIssue
     assignees: list[User]
     assignee: Optional[User] = None
     labels: list[Label]
