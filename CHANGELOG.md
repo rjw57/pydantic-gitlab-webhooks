@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.1](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.2.0...0.2.1) (2024-11-17)
+
+### Bug Fixes
+
+* **ci:** use specific pages artifact upload action ([da6d0d3](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/da6d0d3a6b2bd1d70eddfb779065c65b374f33d7))
+
 ## [0.2.0](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.15...0.2.0) (2024-11-17)
 
 ### Features
