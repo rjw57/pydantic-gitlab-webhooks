@@ -22,8 +22,5 @@
         "path": "tool.poetry.version"
       }
     }
-  },
-  "hooks": {
-    "after:bump": "poetry build"
   }
 }
