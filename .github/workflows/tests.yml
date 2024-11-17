@@ -31,18 +31,33 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Run tests
         run: poetry run pytest -v
+  build:
+    name: build distribution artifacts
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # required for release-bumper action
+      - uses: ./.github/actions/release-bumper
+      - uses: ./.github/actions/install-deps
+      - name: Build the Python package
+        run: poetry build
+      - name: Upload Python build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-dist
+          path: dist/*
   mkdocs:
     name: build documentation
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/install-deps
         with:
-          python-version: ${{ matrix.python-version }}
+          fetch-depth: 0  # required for release-bumper action
+      - uses: ./.github/actions/install-deps
+      - uses: ./.github/actions/release-bumper
       - name: Build the documentation
-        run: |
-          poetry run mkdocs build
-          touch site/.nojekyll
+        run: poetry run mkdocs build
       - name: Upload GitHub pages artefact
         uses: actions/upload-pages-artifact@v3
         with:
