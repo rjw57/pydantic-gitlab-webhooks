@@ -8,6 +8,11 @@
 Module containing Pydantic models for validating bodies from [GitLab webhook
 requests](https://docs.gitlab.com/ee/user/project/integrations/webhook_events.html).
 
+## Documentation
+
+The project documentation including an API reference can be found at
+[https://rjw57.github.io/pydantic-gitlab-webhooks/](https://rjw57.github.io/pydantic-gitlab-webhooks/).
+
 ## Usage example
 
 Intended usage is via a single `validate_event_header_and_body` function which will
