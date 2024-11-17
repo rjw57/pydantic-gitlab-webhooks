@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.2](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.2.1...0.2.2) (2024-11-17)
+
+### Bug Fixes
+
+* **docs:** add missing link to documentation ([f1f051b](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/f1f051bce5d70d12b136e73bbf6d037a5178f6c0))
+
 ## [0.2.1](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.2.0...0.2.1) (2024-11-17)
 
 ### Bug Fixes
