@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pydantic-gitlab-webhooks"
-version = "0.1.15"
+version = "0.2.0"
 description = "Pydantic models for GitLab webhook payloads"
 authors = [
   "Rich Wareham <rich.pydantic-gitlab-webhooks@richwareham.com>"
@@ -28,12 +28,14 @@ pytest = "^8.3.3"
 pytest-cov = "^6.0.0"
 faker = "^33.0.0"
 
-
 [tool.poetry.group.doc.dependencies]
 mkdocs = "^1.6.1"
-mkdocstrings = {extras = ["python"], version = "^0.27.0"}
 mkdocs-material = "^9.5.44"
 black = "^24.10.0"
+
+  [tool.poetry.group.doc.dependencies.mkdocstrings]
+  extras = [ "python" ]
+  version = "^0.27.0"
 
 [tool.pytest.ini_options]
 addopts = "--cov --cov-report term --cov-report html"

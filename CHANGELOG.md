@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.0](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.15...0.2.0) (2024-11-17)
+
+### Features
+
+* add GitHub-pages hosted documentation ([ea0092e](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/ea0092e4a2ee41f6e8c309c590e2e0e89bdcddb9))
+
 ## [0.1.15](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.1.14...0.1.15) (2024-11-16)
 
 ### Bug Fixes
