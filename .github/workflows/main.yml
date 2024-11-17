@@ -38,6 +38,20 @@ jobs:
         with:
           name: python-dist
           path: dist/*
+  pages:
+    name: GitHub pages
+    needs: [release]
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    environment:
+      name: github-pages
+      url: https://rjw57.github.io/pydantic-gitlab-webhooks/
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
   test-pypi:
     name: Publish to Test PyPI
     needs: [release]

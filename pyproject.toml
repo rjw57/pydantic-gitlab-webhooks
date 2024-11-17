@@ -9,10 +9,11 @@ license = "MIT"
 readme = "README.md"
 
   [tool.poetry.urls]
-  homepage = "https://github.com/rjw57/pydantic-gitlab-webhooks"
-  repository = "https://github.com/rjw57/pydantic-gitlab-webhooks.git"
-  issues = "https://github.com/rjw57/pydantic-gitlab-webhooks/issues"
-  changelog = "https://github.com/rjw57/pydantic-gitlab-webhooks/blob/main/CHANGELOG.md"
+  Homepage = "https://github.com/rjw57/pydantic-gitlab-webhooks"
+  Repository = "https://github.com/rjw57/pydantic-gitlab-webhooks.git"
+  Issues = "https://github.com/rjw57/pydantic-gitlab-webhooks/issues"
+  Changelog = "https://github.com/rjw57/pydantic-gitlab-webhooks/blob/main/CHANGELOG.md"
+  Documentation = "https://rjw57.github.io/pydantic-gitlab-webhooks"
 
   [tool.poetry.dependencies]
   python = "^3.10"
@@ -26,6 +27,13 @@ readme = "README.md"
 pytest = "^8.3.3"
 pytest-cov = "^6.0.0"
 faker = "^33.0.0"
+
+
+[tool.poetry.group.doc.dependencies]
+mkdocs = "^1.6.1"
+mkdocstrings = {extras = ["python"], version = "^0.27.0"}
+mkdocs-material = "^9.5.44"
+black = "^24.10.0"
 
 [tool.pytest.ini_options]
 addopts = "--cov --cov-report term --cov-report html"

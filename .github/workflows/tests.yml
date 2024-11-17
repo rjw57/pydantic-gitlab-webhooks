@@ -49,3 +49,34 @@ jobs:
         run: poetry install
       - name: Run tests
         run: poetry run pytest -v
+  mkdocs:
+    name: build documentation
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v3
+      - name: Setup a local virtual environment
+        run: |
+          poetry config virtualenvs.create true --local
+          poetry config virtualenvs.in-project true --local
+      - uses: actions/cache@v4
+        name: Define a cache for the virtual environment based on the dependencies lock file
+        with:
+          path: ./.venv
+          key: venv-docs-${{ hashFiles('poetry.lock') }}
+      - name: Install the project dependencies
+        run: poetry install
+      - name: Build the documentation
+        run: |
+          poetry run mkdocs build
+          touch site/.nojekyll
+      - name: Upload GitHub pages artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: site/*

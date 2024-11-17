@@ -1,10 +1,9 @@
 from typing import Annotated, Literal, Union
 
-from pydantic import BaseModel, Field, TypeAdapter
+from pydantic import BaseModel, Field
 
 from .events import (
     AnyAccessTokenEvent,
-    AnyEvent,
     AnyNoteEvent,
     DeploymentEvent,
     EmojiEvent,
@@ -124,19 +123,3 @@ _AnyHook = Annotated[
     ],
     Field(discriminator="header"),
 ]
-
-_HOOK_VALIDATOR = TypeAdapter(_AnyHook)
-
-
-def validate_event_header_and_body(header: str, body: dict) -> AnyEvent:
-    """
-    Validate an event header body against the webhook schema.
-
-    Args:
-        header: Value of the X-Gitlab-Event header
-        body: Python dictionary representing the received event body
-
-    Returns:
-        a validated and parsed event
-    """
-    return _HOOK_VALIDATOR.validate_python({"header": header, "event_body": body}).event_body

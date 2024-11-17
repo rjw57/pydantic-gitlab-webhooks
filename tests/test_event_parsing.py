@@ -1,6 +1,9 @@
 import pytest
 
-from pydantic_gitlab_webhooks import validate_event_dict, validate_event_header_and_body
+from pydantic_gitlab_webhooks import (
+    validate_event_body_dict,
+    validate_event_header_and_body_dict,
+)
 from pydantic_gitlab_webhooks.events import (
     CommitNoteEvent,
     DeploymentEvent,
@@ -59,7 +62,7 @@ FIXTURE_NAMES_AND_EXPECTED_TYPES = {
 @pytest.mark.parametrize("event_body", ALL_EVENT_FIXTURE_NAMES, indirect=True)
 def test_event_parses(event_body):
     "Event test fixture parses"
-    validate_event_dict(event_body)
+    validate_event_body_dict(event_body)
 
 
 @pytest.mark.parametrize(
@@ -69,13 +72,13 @@ def test_event_parses(event_body):
 )
 def test_inferred_event_type(event_body, expected_type):
     "Event types are correctly inferred from event body"
-    assert isinstance(validate_event_dict(event_body), expected_type)
+    assert isinstance(validate_event_body_dict(event_body), expected_type)
 
 
 @pytest.mark.parametrize("header,event_body", HEADER_AND_FIXTURE_NAMES, indirect=["event_body"])
 def test_header_validates(header, event_body):
     "Events parse when associated with incoming request header."
-    validate_event_header_and_body(header, event_body)
+    validate_event_header_and_body_dict(header, event_body)
 
 
 @pytest.mark.parametrize(
@@ -89,4 +92,4 @@ def test_header_validates(header, event_body):
 )
 def test_header_inferred_type(header, event_body, expected_type):
     "Events types are correctly inferred when parsed with header"
-    assert isinstance(validate_event_header_and_body(header, event_body), expected_type)
+    assert isinstance(validate_event_header_and_body_dict(header, event_body), expected_type)

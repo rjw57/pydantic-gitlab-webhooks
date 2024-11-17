@@ -1,6 +1,6 @@
 from typing import Annotated, Literal, Optional, Union
 
-from pydantic import AnyHttpUrl, BaseModel, Field, TypeAdapter
+from pydantic import AnyHttpUrl, BaseModel, Field
 
 from . import (
     _access_token_event,
@@ -33,9 +33,7 @@ from ._common import (
 from ._types import Datetime
 
 __all__ = [
-    "AnyAccessTokenEvent",
     "AnyEvent",
-    "AnyNoteEvent",
     "CommitNoteEvent",
     "DeploymentEvent",
     "EmojiEvent",
@@ -349,7 +347,7 @@ _AnyEventNameDiscriminatedEvent = Annotated[
 
 # The ordering of the union is important here, we start with the easiest models to early-out and
 # move to models where we need to examine progressively closer.
-AnyEvent = Annotated[
+_AnyParseableEvent = Annotated[
     Union[
         _AnyKindDiscriminatedEvent,
         _AnyEventNameDiscriminatedEvent,
@@ -359,18 +357,25 @@ AnyEvent = Annotated[
     Field(union_mode="left_to_right"),
 ]
 
-
-_EVENT_VALIDATOR = TypeAdapter(AnyEvent)
-
-
-def validate_event_dict(event: dict) -> AnyEvent:
-    """
-    Validate an incoming event body against the incoming webhook schema.
-
-    Args:
-        event: Python dictionary representing the received event body
-
-    Returns:
-        a validated and parsed event
-    """
-    return _EVENT_VALIDATOR.validate_python(event)
+# A version of _AnyEvent optimised for type-checking and not for parsing.
+AnyEvent = Union[
+    CommitNoteEvent,
+    DeploymentEvent,
+    EmojiEvent,
+    FeatureFlagEvent,
+    GroupAccessTokenEvent,
+    GroupMemberEvent,
+    IssueEvent,
+    IssueNoteEvent,
+    JobEvent,
+    MergeRequestNoteEvent,
+    PipelineEvent,
+    ProjectAccessTokenEvent,
+    ProjectEvent,
+    PushEvent,
+    ReleaseEvent,
+    SnippetNoteEvent,
+    SubgroupEvent,
+    TagPushEvent,
+    WikiPageEvent,
+]
