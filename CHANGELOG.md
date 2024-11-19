@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.0](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.2.3...0.3.0) (2024-11-19)
+
+### Features
+
+* make some more fields optional as a result of real-world tests ([ce4d793](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/ce4d79369b6692f7b132450c12d031ad3dc67804))
+
 ## [0.2.3](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.2.2...0.2.3) (2024-11-17)
 
 ## [0.2.2](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.2.1...0.2.2) (2024-11-17)
