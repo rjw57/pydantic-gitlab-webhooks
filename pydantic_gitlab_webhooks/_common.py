@@ -106,7 +106,7 @@ class Issue(BaseModel, _TimestampedMixin, _IdentifiableMixin):
     author_id: int
     project_id: int
     position: Optional[int] = None
-    description: str
+    description: Optional[str] = None
     milestone_id: Optional[int]
     state: str
     iid: int
