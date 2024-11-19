@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.1](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.0...0.3.1) (2024-11-19)
+
+### Bug Fixes
+
+* allow issues to have null descriptions ([d735dfa](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/d735dfaa78fd1aa7765fa4ce35de2025a2c5647a))
+
 ## [0.3.0](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.2.3...0.3.0) (2024-11-19)
 
 ### Features
