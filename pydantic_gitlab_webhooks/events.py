@@ -91,9 +91,9 @@ class IssueEvent(BaseModel):
     user: User
     project: Project
     object_attributes: _issue_event.Issue
-    assignees: list[User]
+    assignees: Optional[list[User]] = None
     assignee: Optional[User] = None
-    labels: list[Label]
+    labels: Optional[list[Label]] = None
     changes: Optional[_issue_event.Changes] = None
 
 
@@ -135,9 +135,9 @@ class MergeRequestEvent(BaseModel):
     user: User
     project: Project
     object_attributes: _merge_request_event.MergeRequest
-    labels: list[Label]
-    assignees: list[User]
-    reviewers: list[User]
+    labels: Optional[list[Label]] = None
+    assignees: Optional[list[User]] = None
+    reviewers: Optional[list[User]] = None
     changes: Optional[_merge_request_event.Changes] = None
 
 
