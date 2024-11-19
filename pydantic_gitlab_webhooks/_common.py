@@ -62,7 +62,7 @@ class Label(BaseModel, _TimestampedMixin, _IdentifiableMixin):
     color: str
     project_id: Optional[int]
     template: bool
-    description: Optional[str]
+    description: Optional[str] = None
     type: str
     group_id: Optional[int]
 
@@ -86,7 +86,7 @@ class User(UserNameAndEmail, _IdentifiableMixin):
 class Project(BaseModel, _IdentifiableMixin):
     # See "hook_attrs" in https://gitlab.com/gitlab-org/gitlab/-/blob/master/app/models/project.rb
     name: str
-    description: str
+    description: Optional[str] = None
     web_url: str
     avatar_url: Optional[AnyHttpUrl] = None
     git_ssh_url: str
