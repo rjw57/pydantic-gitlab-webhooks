@@ -87,7 +87,8 @@ class TagPushEvent(_BasePushEvent):
 class IssueEvent(BaseModel):
     # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/hook_data/issue_builder.rb
     object_kind: Literal["issue"] | Literal["work_item"]
-    event_type: Literal["issue"]
+    # all the docs say is 'the object_kind field is work_item, and the type is the work item type.'
+    event_type: str
     user: User
     project: Project
     object_attributes: _issue_event.Issue

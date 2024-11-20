@@ -27,13 +27,13 @@ class Changes(BaseModel):
     target_branch: Optional[Change[str]] = None
     source_branch: Optional[Change[str]] = None
     assignee_id: Optional[Change[Optional[int]]] = None
-    title: Optional[Change[str]] = None
+    title: Optional[Change[Optional[str]]] = None
     milestone_id: Optional[Change[Optional[int]]] = None
     state: Optional[Change[str]] = None
     merge_status: Optional[Change[str]] = None
-    description: Optional[Change[str]] = None
-    labels: Optional[Change[list[Label]]] = None
-    last_commit: Optional[Change[Commit]] = None
+    description: Optional[Change[Optional[str]]] = None
+    labels: Optional[Change[Optional[list[Label]]]] = None
+    last_commit: Optional[Change[Optional[Commit]]] = None
     draft: Optional[Change[bool]] = None
     assignee: Optional[Change[Optional[User]]] = None
     detailed_merge_status: Optional[Change[str]] = None

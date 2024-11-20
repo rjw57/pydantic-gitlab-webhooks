@@ -58,7 +58,7 @@ class Note(BaseModel, _TimestampedMixin, _IdentifiableMixin):
 
 class Label(BaseModel, _TimestampedMixin, _IdentifiableMixin):
     # See "hook_attrs" in https://gitlab.com/gitlab-org/gitlab/-/blob/master/app/models/label.rb
-    title: str
+    title: Optional[str]
     color: str
     project_id: Optional[int]
     template: bool
@@ -100,7 +100,7 @@ class Project(BaseModel, _IdentifiableMixin):
 
 class Issue(BaseModel, _TimestampedMixin, _IdentifiableMixin):
     # See: https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/hook_data/issue_builder.rb
-    title: str
+    title: Optional[str]
     assignee_ids: list[int]
     assignee_id: Optional[int]
     author_id: int
@@ -122,7 +122,7 @@ class Commit(BaseModel):
     # See: "hook_attrs" in https://gitlab.com/gitlab-org/gitlab/-/blob/master/app/models/commit.rb
     id: str
     message: str = ""
-    title: str = ""
+    title: Optional[str] = ""
     timestamp: Datetime
     url: AnyHttpUrl
     author: CommitAuthor
@@ -135,13 +135,13 @@ class MergeRequest(BaseModel, _TimestampedMixin, _IdentifiableMixin):
     source_project_id: int
     author_id: int
     assignee_id: Optional[int]
-    title: str
+    title: Optional[str]
     milestone_id: Optional[int]
     state: str
     merge_status: str
     target_project_id: int
     iid: int
-    description: str
+    description: Optional[str]
     position: Optional[int] = None
     labels: list[Label]
     source: Optional[Project]
@@ -154,7 +154,7 @@ class MergeRequest(BaseModel, _TimestampedMixin, _IdentifiableMixin):
 
 class Snippet(BaseModel, _TimestampedMixin, _IdentifiableMixin):
     # See "hook_attrs" in https://gitlab.com/gitlab-org/gitlab/-/blob/master/app/models/snippet.rb
-    title: str
+    title: Optional[str]
     description: str
     content: str
     author_id: int
@@ -177,7 +177,7 @@ class Wiki(BaseModel):
 class WikiPage(BaseModel):
     # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/hook_data/wiki_page_builder.rb
     # https://gitlab.com/gitlab-org/gitlab/-/blob/master/app/models/wiki_page.rb
-    title: str
+    title: Optional[str]
     content: str
     format: str
     message: str

@@ -12,10 +12,10 @@ class Issue(BaseIssue):
 
 
 class Changes(BaseModel):
-    title: Optional[Change[str]] = None
-    assignee_ids: Optional[Change[list[int]]] = None
+    title: Optional[Change[Optional[str]]] = None
+    assignee_ids: Optional[Change[Optional[list[int]]]] = None
     assignee_id: Optional[Change[Optional[int]]] = None
-    description: Optional[Change[str]] = None
+    description: Optional[Change[Optional[str]]] = None
     milestone_id: Optional[Change[Optional[int]]] = None
     state: Optional[Change[str]] = None
-    labels: Optional[Change[list[Label]]] = None
+    labels: Optional[Change[Optional[list[Label]]]] = None
