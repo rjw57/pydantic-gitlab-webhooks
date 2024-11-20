@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.3](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.2...0.3.3) (2024-11-20)
+
+### Bug Fixes
+
+* be more forgiving in what we accept in changes ([221a028](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/221a028541993584d286dae16ad91ad0db6c2d3c))
+* **issues:** be more liberal in "event_type" for issue hooks ([db34396](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/db34396a13eb55ebaeea65594723f2a325f3590f))
+
 ## [0.3.2](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.1...0.3.2) (2024-11-20)
 
 ## [0.3.1](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.0...0.3.1) (2024-11-19)
