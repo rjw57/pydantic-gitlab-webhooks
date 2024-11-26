@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.6](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.5...0.3.6) (2024-11-26)
+
+### Bug Fixes
+
+* **deps:** update dependency pydantic to v2.10.2 ([dd832d2](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/dd832d2d2dbc59c3b2556c0e667fefcdfd8dcd35))
+
 ## [0.3.5](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.4...0.3.5) (2024-11-22)
 
 ### Bug Fixes
