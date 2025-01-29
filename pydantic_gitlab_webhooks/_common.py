@@ -16,12 +16,14 @@ from ._types import Date, Datetime
 
 class _TimestampedMixin:
     "Mixin class for resources with GitLab-style created and updated at timestamps"
+
     created_at: Datetime
     updated_at: Datetime
 
 
 class _IdentifiableMixin:
     "Mixin class for resources with optional numeric ids"
+
     id: Optional[int] = None
 
 
