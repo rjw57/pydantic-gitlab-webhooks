@@ -349,18 +349,17 @@ test = ["pytest (>=6)"]
 
 [[package]]
 name = "faker"
-version = "35.2.0"
+version = "36.0.0"
 description = "Faker is a Python package that generates fake data for you."
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "Faker-35.2.0-py3-none-any.whl", hash = "sha256:609abe555761ff31b0e5e16f958696e9b65c9224a7ac612ac96bfc2b8f09fe35"},
-    {file = "faker-35.2.0.tar.gz", hash = "sha256:28c24061780f83b45d9cb15a72b8f143b09d276c9ff52eb557744b7a89e8ba19"},
+    {file = "Faker-36.0.0-py3-none-any.whl", hash = "sha256:67b89f255843c84fac395ae4430d48a7422e1f48b3435dbcceb77364d24e2bb8"},
+    {file = "faker-36.0.0.tar.gz", hash = "sha256:e00cf69e55d3466f93c82cf63259a484d14b48702a1d9ed719ff039e9f392b49"},
 ]
 
 [package.dependencies]
 python-dateutil = ">=2.4"
-typing-extensions = "*"
 
 [[package]]
 name = "ghp-import"
@@ -1268,4 +1267,4 @@ watchmedo = ["PyYAML (>=3.10)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "e8ee8da89d8c4bf350544624670f23698e8ce678cf8f673f603d45b4945a8cc9"
+content-hash = "572b214d56e694a44db737a8dfdafe67f861636eb06fa3f86b98586f80f22deb"
