@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.34](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.33...0.3.34) (2025-03-14)
+
+### Bug Fixes
+
+* add MergeRequestEvent into AnyEvent ([5727279](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/57272794c4591b053c53c4be21ed0968ebf54bea)), closes [#73](https://github.com/rjw57/pydantic-gitlab-webhooks/issues/73)
+
 ## [0.3.33](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.32...0.3.33) (2025-03-13)
 
 ## [0.3.32](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.31...0.3.32) (2025-03-07)
