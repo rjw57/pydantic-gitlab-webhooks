@@ -370,6 +370,7 @@ AnyEvent = Union[
     IssueNoteEvent,
     JobEvent,
     MergeRequestNoteEvent,
+    MergeRequestEvent,
     PipelineEvent,
     ProjectAccessTokenEvent,
     ProjectEvent,
