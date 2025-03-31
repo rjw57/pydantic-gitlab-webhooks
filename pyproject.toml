@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pydantic-gitlab-webhooks"
-version = "0.3.37"
+version = "0.3.38"
 description = "Pydantic models for GitLab webhook payloads"
 authors = [
   "Rich Wareham <rich.pydantic-gitlab-webhooks@richwareham.com>"
