@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.39](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.38...0.3.39) (2025-05-24)
+
+### Bug Fixes
+
+* **deps:** update all dependencies ([81fb49e](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/81fb49e442dee6a4a7bf7a791c11d394c5863d49))
+
 ## [0.3.38](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.37...0.3.38) (2025-03-31)
 
 ### Bug Fixes
