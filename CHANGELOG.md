@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.3.40](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.39...0.3.40) (2025-06-02)
+
 ## [0.3.39](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.38...0.3.39) (2025-05-24)
 
 ### Bug Fixes
