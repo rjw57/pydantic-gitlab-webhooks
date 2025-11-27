@@ -24,9 +24,9 @@ readme = "README.md"
     version = "^2.9.2"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.3.3"
+pytest = "^9.0.0"
 pytest-cov = "^7.0.0"
-faker = "^37.0.0"
+faker = "^38.0.0"
 
 [tool.poetry.group.doc.dependencies]
 mkdocs = "^1.6.1"
@@ -35,7 +35,7 @@ black = "^25.0.0"
 
   [tool.poetry.group.doc.dependencies.mkdocstrings]
   extras = [ "python" ]
-  version = "^0.30.0"
+  version = "^1.0.0"
 
 [tool.pytest.ini_options]
 addopts = "--cov --cov-report term --cov-report html"
