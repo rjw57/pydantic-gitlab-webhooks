@@ -26,7 +26,7 @@ readme = "README.md"
 [tool.poetry.group.dev.dependencies]
 pytest = "^9.0.0"
 pytest-cov = "^7.0.0"
-faker = "^38.0.0"
+faker = "^40.0.0"
 
 [tool.poetry.group.doc.dependencies]
 mkdocs = "^1.6.1"
