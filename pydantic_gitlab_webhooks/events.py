@@ -155,11 +155,11 @@ class PipelineEvent(BaseModel):
     # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/data_builder/pipeline.rb
     object_kind: Literal["pipeline"]
     object_attributes: Pipeline
-    merge_request: _pipeline_event.MergeRequest
+    merge_request: Optional[_pipeline_event.MergeRequest] = None
     user: User
     project: Project
     commit: Commit
-    source_pipeline: Optional[SourcePipeline]
+    source_pipeline: Optional[SourcePipeline] = None
     builds: list[_pipeline_event.Build]
 
 
