@@ -106,7 +106,7 @@ class Issue(BaseModel, _TimestampedMixin, _IdentifiableMixin):
     assignee_ids: list[int]
     assignee_id: Optional[int]
     author_id: int
-    project_id: int
+    project_id: Optional[int] = None
     position: Optional[int] = None
     description: Optional[str] = None
     milestone_id: Optional[int]
@@ -199,7 +199,7 @@ class Pipeline(BaseModel, _IdentifiableMixin):
     # See "hook_attrs()" in
     # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/data_builder/pipeline.rb
     iid: int
-    name: str
+    name: Optional[str] = None
     ref: str
     tag: bool
     sha: str
@@ -208,8 +208,8 @@ class Pipeline(BaseModel, _IdentifiableMixin):
     status: str
     stages: list[str]
     created_at: Datetime
-    finished_at: Datetime
-    duration: int
+    finished_at: Optional[Datetime] = None
+    duration: Optional[int] = None
     variables: list[PipelineVariable]
     url: AnyHttpUrl
 
