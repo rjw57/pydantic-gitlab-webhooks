@@ -90,7 +90,7 @@ class IssueEvent(BaseModel):
     # all the docs say is 'the object_kind field is work_item, and the type is the work item type.'
     event_type: str
     user: User
-    project: Project
+    project: Optional[Project] = None
     object_attributes: _issue_event.Issue
     assignees: Optional[list[User]] = None
     assignee: Optional[User] = None
