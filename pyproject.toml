@@ -31,7 +31,7 @@ faker = "^40.0.0"
 [tool.poetry.group.doc.dependencies]
 mkdocs = "^1.6.1"
 mkdocs-material = "^9.5.44"
-black = "^25.0.0"
+black = "^26.0.0"
 
   [tool.poetry.group.doc.dependencies.mkdocstrings]
   extras = [ "python" ]
