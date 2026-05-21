@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.53](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.52...0.3.53) (2026-05-21)
+
+### Bug Fixes
+
+* Marking nullable webhook payload fields as optional ([888947d](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/888947d2689ad8c396091771554ffebe452e9272))
+
 ## [0.3.52](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.51...0.3.52) (2026-02-18)
 
 ## [0.3.51](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.50...0.3.51) (2026-01-14)
