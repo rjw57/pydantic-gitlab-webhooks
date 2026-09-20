@@ -133,7 +133,6 @@ class Commit(BaseModel):
     removed: list[str] = Field(default_factory=list)
 
 
-
 class MergeRequest(BaseModel, _TimestampedMixin, _IdentifiableMixin):
     # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/hook_data/merge_request_builder.rb
     target_branch: str
