@@ -1,6 +1,6 @@
 from typing import Literal, Optional
 
-from pydantic import AnyHttpUrl, BaseModel, EmailStr
+from pydantic import AnyHttpUrl, BaseModel, EmailStr, Field
 
 from ._types import Date, Datetime
 
@@ -128,6 +128,10 @@ class Commit(BaseModel):
     timestamp: Datetime
     url: AnyHttpUrl
     author: CommitAuthor
+    added: list[str] = Field(default_factory=list)
+    modified: list[str] = Field(default_factory=list)
+    removed: list[str] = Field(default_factory=list)
+
 
 
 class MergeRequest(BaseModel, _TimestampedMixin, _IdentifiableMixin):
