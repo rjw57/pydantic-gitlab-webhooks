@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.54](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.53...0.3.54) (2026-09-20)
+
+### Bug Fixes
+
+* add properties added, modified and removed to commit ([6f6eb8d](https://github.com/rjw57/pydantic-gitlab-webhooks/commit/6f6eb8dec396ad7f51e5a60e6e6c21aca94b6ea9))
+
 ## [0.3.53](https://github.com/rjw57/pydantic-gitlab-webhooks/compare/0.3.52...0.3.53) (2026-05-21)
 
 ### Bug Fixes
